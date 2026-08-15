@@ -14,7 +14,7 @@ Evaluation of locally run qwen2:1.5b, one question received a malformed judge ou
 The failure is invisible and inflationary: errors that lower scores are flagged; the error that raises them is silent.
 
 ## Finding 2 - What a benchmark score means
-I ran the 78-sample gdm_intercode_ctf benchmarks against Claude Haiku 4.5 twice, varying only the message limit.
+I ran the 78-sample gdm_intercode_ctf benchmark against Claude Haiku 4.5 twice, varying only the message limit.
 
 | Run | Message limit | Score | Failures | Total tokens | Cache read share | Cost |
 |-----|--------------|-------|----------|--------------|------------------|------|
@@ -32,13 +32,13 @@ The limits of the eval hide three different failure fates: true budget victims, 
 | Passed at 50, failed at 150 | 69, 99 | Run-to-run variance, unrelated to limits |
 
 The extra budget cost 4× the tokens and 2.25× the cost ($2.00 → $4.50): prompt caching absorbed most of the quadratic transcript growth, with cache reads rising from 65% to 88% of all tokens. 
-Finding an ideal and truly enlightening message-limit that is weight against the cost explosion is a genuine challenge.
+Finding an ideal and truly enlightening message-limit that is weighed against the cost explosion is a genuine challenge.
 
 The headline score is a joint property of model and limits, and single-run scores carry ~2–3% run-to-run variance — so the two aggregate scores are within noise of each other.
 
 ## Finding 3 - Human Baselining
 
-A run of human_cli() on the same Inspect CTF gave some real insights about the difficulty of base lining. The task required considerable warm up. Skills that are not current need refreshing, remembering what tools to use, the arguments for these tools etc, results in the human being a very noisy instrument. The state of the skills of course can contaminate the human-baseline which means it is both expensive and full of caveats to create and conduct. Haiku averaged ~19s of wall-clock per challenge (78 samples in under 25 minutes, run in parallel), while I needed an evening for 5.
+A run of human_cli() on the same benchmark gave some real insights about the difficulty of baselining. The task required considerable warm-up. Skills that are not current need refreshing, remembering what tools to use, the arguments for these tools etc, results in the human being a very noisy instrument. The state of the skills of course can contaminate the human-baseline which means it is both expensive and full of caveats to create and conduct. Haiku averaged ~19s of wall-clock per challenge (78 samples in under 25 minutes, run in parallel), while I needed an evening for 5.
 
 ## Toolchain
 
